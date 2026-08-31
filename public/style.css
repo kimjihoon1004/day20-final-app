@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #6c5ce7;
+  --accent-light: #ede9fe;
+  --text-main: #2d2d3a;
+  --text-sub: #8a8a9a;
+  --bg: #f2f2f7;
+  --card-bg: #ffffff;
+  --border: #ececf2;
+  --danger: #ff5c6a;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: "Segoe UI", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  color: var(--text-main);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(108, 92, 231, 0.14), 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.card-header {
+  padding: 24px 24px 16px;
+  text-align: center;
+}
+
+.card-header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.add-form {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 16px;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+.add-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 16px;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+.search-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.btn-search {
+  padding: 10px 16px;
+  background: var(--accent-light);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.btn-search:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-add {
+  padding: 10px 16px;
+  background: var(--accent);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  opacity: 0.9;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 0 20px 16px;
+}
+
+.filter-tab {
+  flex: 1;
+  padding: 8px 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text-sub);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.exercise-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 12px;
+  border-top: 1px solid var(--border);
+}
+
+.exercise-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.exercise-item:last-child {
+  border-bottom: none;
+}
+
+.exercise-check {
+  position: relative;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.exercise-check input {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  pointer-events: none;
+  transition: all 0.15s ease;
+}
+
+.exercise-check input:checked + .checkmark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.exercise-check input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.exercise-name {
+  flex: 1;
+  min-width: 0;
+  font-weight: 600;
+  font-size: 0.92rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exercise-reps {
+  font-size: 0.8rem;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.exercise-item.is-done .exercise-name {
+  color: var(--text-sub);
+  text-decoration: line-through;
+}
+
+.exercise-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+.btn-edit:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-delete {
+  background: #ffe7e9;
+  color: var(--danger);
+}
+
+.btn-delete:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+.card-footer {
+  padding: 16px 20px 22px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: var(--text-sub);
+}
+
+.progress-text strong {
+  color: var(--accent);
+  font-size: 1rem;
+}

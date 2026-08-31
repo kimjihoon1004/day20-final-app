@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Exercise {
+  id        Int      @id @default(autoincrement())
+  name      String   // 운동 이름 (예: 스쿼트, 플랭크)
+  reps      String?  // 세트/횟수 또는 시간 (예: "3세트 x 15회", "30초")
+  isDone    Boolean  @default(false) // 완료 여부 체크
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

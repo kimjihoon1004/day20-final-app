@@ -1,0 +1,9 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/generated/prisma
+
+# Local-only Prisma config and SQLite-based migration history
+prisma.config.ts
+prisma/migrations

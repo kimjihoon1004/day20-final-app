@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>운동 루틴 트래커</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="card-header">
+      <h1>운동 루틴 트래커</h1>
+    </header>
+
+    <section class="add-form">
+      <input type="text" class="input-name" placeholder="운동 이름 입력" />
+      <input type="text" class="input-reps" placeholder="세트/횟수 입력" />
+      <button type="button" class="btn btn-add">추가</button>
+    </section>
+
+    <nav class="filter-tabs">
+      <button type="button" class="filter-tab active" data-filter="all">전체</button>
+      <button type="button" class="filter-tab" data-filter="done">완료</button>
+      <button type="button" class="filter-tab" data-filter="undone">미완료</button>
+    </nav>
+
+    <section class="search-form">
+      <input type="text" class="input-search" placeholder="운동 이름 조회" />
+      <button type="button" class="btn btn-search">조회</button>
+    </section>
+
+    <ul class="exercise-list">
+      <li class="exercise-item">
+        <label class="exercise-check">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <span class="exercise-name">스쿼트</span>
+        <span class="exercise-reps">3세트 x 15회</span>
+        <div class="exercise-actions">
+          <button type="button" class="btn btn-edit">수정</button>
+          <button type="button" class="btn btn-delete">삭제</button>
+        </div>
+      </li>
+      <li class="exercise-item is-done">
+        <label class="exercise-check">
+          <input type="checkbox" checked />
+          <span class="checkmark"></span>
+        </label>
+        <span class="exercise-name">플랭크</span>
+        <span class="exercise-reps">30초</span>
+        <div class="exercise-actions">
+          <button type="button" class="btn btn-edit">수정</button>
+          <button type="button" class="btn btn-delete">삭제</button>
+        </div>
+      </li>
+      <li class="exercise-item">
+        <label class="exercise-check">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <span class="exercise-name">푸시업</span>
+        <span class="exercise-reps">3세트 x 10회</span>
+        <div class="exercise-actions">
+          <button type="button" class="btn btn-edit">수정</button>
+          <button type="button" class="btn btn-delete">삭제</button>
+        </div>
+      </li>
+    </ul>
+
+    <footer class="card-footer">
+      <span class="progress-text">오늘 완료: <strong class="progress-done">0</strong> / <span class="progress-total">0</span></span>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
